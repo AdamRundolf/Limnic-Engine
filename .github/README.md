@@ -1,4 +1,6 @@
-# Limnic Engine
+<p align="center">
+  <img src="https://github.com/FriskTheFallenHuman/D3ModdingKit/blob/master/.github/branding/logo.png?raw=true" alt="The logo, what else do you expected?"/>
+</p>
 
 **Limnic Engine** is a C++ game engine and development framework built from the **D3ModdingKit / dhewm3 / id Tech 4** codebase.
 
