@@ -79,6 +79,7 @@ Radiant is being improved before adding extensive game-specific functionality. E
  - Improved mouse-look responsiveness.
  - Reduced unnecessary work during viewport repainting without modifying the renderer.
 
+# Future Plans
 ## Engine Architecture
 
 Limnic is intended to retain useful low-level portions of the original id Tech 4 architecture while progressively replacing game-specific systems.
