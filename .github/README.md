@@ -68,11 +68,11 @@ The level editor is therefore a major development target.
 
 Radiant is being improved before adding extensive game-specific functionality. Editor performance, responsiveness, stability, and workflow are treated as fundamental engine-development concerns.
 
-### Changes
+# Changes
 
 ## Radiant Editor
 
-# Current Changes
+### Current Changes
  - Improved Radiant performance in the camera viewport.
  - Removed unnecessary synchronous window updates during viewport interaction.
  - Improved camera flying responsiveness.
