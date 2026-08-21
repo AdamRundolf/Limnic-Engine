@@ -68,29 +68,16 @@ The level editor is therefore a major development target.
 
 Radiant is being improved before adding extensive game-specific functionality. Editor performance, responsiveness, stability, and workflow are treated as fundamental engine-development concerns.
 
-### Example
+### Changes
 
-An early Radiant performance investigation identified unnecessary synchronous window updates in the camera viewport.
+## Radiant Editor
 
-Replacing:
-
-```cpp
-RDW_INVALIDATE | RDW_UPDATENOW
-```
-
-with:
-
-```cpp
-RDW_INVALIDATE
-```
-
-allowed Windows to process the repaint normally rather than forcing an immediate update.
-
-This improved both **camera flying and mouse-look responsiveness** without requiring changes to the renderer itself.
-
-This represents the general development philosophy of Limnic:
-
-**Find the actual bottleneck first. Fix the smallest system responsible.**
+# Current Changes
+ - Improved Radiant performance in the camera viewport.
+ - Removed unnecessary synchronous window updates during viewport interaction.
+ - Improved camera flying responsiveness.
+ - Improved mouse-look responsiveness.
+ - Reduced unnecessary work during viewport repainting without modifying the renderer.
 
 ## Engine Architecture
 
