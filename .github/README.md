@@ -2,45 +2,69 @@
   <img src="https://github.com/AdamRundolf/Limnic-Engine/blob/main/.github/LOGO.png" alt="The logo, what else do you expected?"/>
 </p>
 
+# Limnic Engine
+
 **Limnic Engine** is a C++ game engine and development framework built from the **D3ModdingKit / dhewm3 / id Tech 4** codebase.
 
-The project focuses on turning a proven classic game-engine foundation into a modern, flexible engine suitable for building new games while retaining the strengths of id Tech 4's renderer, tools, animation, physics, audio, and world systems.
+Limnic uses this existing technology as a foundation for building a modern and flexible engine rather than treating the original architecture as something that must be preserved indefinitely.
 
-> **Build on what already works. Replace what doesn't.**
+Existing systems can be retained, modernized, reorganized, replaced, or removed depending on what the engine actually needs.
+
+> **Build on what already works. Replace what doesn't. Don't preserve limitations for the sake of tradition.**
 
 ## Project Goals
 
-Limnic Engine is primarily an **engine programming and tooling project**.
+Limnic Engine is primarily an **engine development and tooling project**.
 
-Rather than immediately replacing the underlying engine, development focuses on improving the existing technology and progressively removing the limitations that make it difficult to develop modern games with it.
+The goal is to take a proven classic engine foundation and evolve it into an engine capable of supporting modern game development while remaining understandable and practical to work with.
 
 ### Current priorities
 
-* Modernize and improve the Radiant level editor
+* Improve the Radiant level editor
 * Fix editor performance and stability problems
 * Improve the asset and development workflow
-* Establish a cleaner gameplay framework
-* Modernize graphics capabilities where necessary
+* Establish a flexible gameplay framework
+* Modernize graphics capabilities
 * Improve navigation and AI tooling
-* Expand support for larger and more complex game worlds
-* Keep the engine approachable enough to understand and modify
+* Support larger and more complex game worlds
+* Improve engine architecture where existing systems become limitations
+* Maintain compatibility with useful existing game assets and formats
+* Keep the engine understandable enough to modify and extend
 
 ## Foundations
 
-Limnic Engine is based on technology originating from:
+Limnic Engine originates from technology developed through:
 
 * **id Tech 4**
 * **Doom 3**
 * **dhewm3**
 * **D3ModdingKit**
 
-The goal is not to reproduce Doom 3's original gameplay architecture. Instead, Limnic uses the existing engine technology as a foundation for a new engine.
+These projects provide the initial foundation of Limnic.
+
+However, Limnic is **not intended to remain a faithful recreation of Doom 3 or id Tech 4**.
+
+Their technology is a starting point.
+
+Systems that remain useful can be improved and extended. Systems that no longer fit the direction of the engine can be replaced.
+
+## Compatibility Without Architectural Restrictions
+
+Limnic may support established asset formats from other engines and games where doing so provides useful capabilities or access to existing content.
+
+Supporting an asset format does **not** mean reproducing the original engine that created it.
+
+For example, an asset format can be imported and converted into Limnic's own runtime representations while being rendered, animated, simulated, or processed using Limnic's own systems.
+
+This allows Limnic to benefit from existing content without making the architecture dependent on the limitations of another engine.
+
+> **Compatibility is a capability, not a constraint.**
 
 ## Why Limnic?
 
-Classic id Tech 4 provides an unusually useful starting point for engine development.
+Classic game engines contain decades of engineering work that would be wasteful to simply discard.
 
-It already contains mature implementations of many difficult low-level systems:
+The id Tech 4 foundation already provides mature implementations of many difficult systems:
 
 * Real-time 3D rendering
 * Materials and shaders
@@ -51,76 +75,83 @@ It already contains mature implementations of many difficult low-level systems:
 * Physics
 * Spatial audio
 * Collision
-* World/map processing
+* World and map processing
 * Resource management
 * Level editing
 * Entity infrastructure
+* Core mathematics and utility systems
 
-Instead of throwing these systems away and starting from nothing, Limnic aims to **modernize and reorganize them where appropriate**.
+Limnic can build upon these systems while progressively replacing the parts that limit further development.
 
-## Tooling First
+The objective is not to rewrite everything.
 
-A major principle of Limnic Engine is:
+The objective is to determine **what is worth keeping and what is worth changing**.
 
-> **If a problem can be solved by improving the tools, improve the tools before rewriting the engine.**
+## Tooling
 
-The level editor is therefore a major development target.
+Tools are a major part of Limnic Engine.
 
-Radiant is being improved before adding extensive game-specific functionality. Editor performance, responsiveness, stability, and workflow are treated as fundamental engine-development concerns.
+A good development environment makes the engine itself easier to develop, debug, and understand.
+
+Radiant is therefore one of the first major areas of development.
+
+Development includes:
+
+* Improving viewport performance
+* Improving camera controls
+* Improving editor responsiveness
+* Fixing stability problems
+* Improving selection and manipulation
+* Improving entity editing
+* Improving asset workflows
+* Improving debugging and visualization
+* Supporting larger scenes
+* Making world-building more efficient
+
+The existing editor technology provides a useful starting point rather than something that must eventually be discarded.
 
 # Changes
 
-## Radiant Editor
+## 0.0.1 Pre-Alpha
 
-### Current Changes
- - Improved Radiant performance in the camera viewport.
- - Removed unnecessary synchronous window updates during viewport interaction.
- - Improved camera flying responsiveness.
- - Improved mouse-look responsiveness.
- - Reduced unnecessary work during viewport repainting without modifying the renderer.
+### Radiant Editor
 
-# Future Plans
-## Engine Architecture
+* Improved Radiant performance in the camera viewport.
+* Removed unnecessary synchronous window updates during viewport interaction.
+* Improved camera flying responsiveness.
+* Improved mouse-look responsiveness.
+* Reduced unnecessary work during viewport repainting without modifying the renderer.
 
-Limnic is intended to retain useful low-level portions of the original id Tech 4 architecture while progressively replacing game-specific systems.
+## Future Plans
 
-### Retained / modernized systems
+### Engine Architecture
 
-Depending on development requirements, the project may retain or extend:
+Limnic is intended to evolve beyond the original id Tech 4 gameplay architecture.
 
-* Renderer
-* Materials
-* Lighting
-* Physics
-* Sound
-* Animation
-* Resource management
-* Map/world representation
-* Core math and utility systems
-* Existing editor technology
+Existing low-level technology can remain where it provides a useful foundation, while higher-level systems can be redesigned around the requirements of Limnic.
 
-### Systems being reconsidered
-
-The original Doom 3 gameplay architecture is not treated as a permanent requirement.
-
-Areas being reconsidered include:
+Potential areas of development include:
 
 * Gameplay framework
-* Actors
-* Entities
+* Entity and actor systems
 * Camera systems
-* Triggers
 * Scripting
 * AI
 * Navigation
-* Game-specific systems
+* Physics integration
+* Resource management
 * Editor/game integration
+* World representation
+* Rendering architecture
+* Asset pipelines
+
+No individual legacy system is considered permanently untouchable.
 
 ## Graphics
 
 Limnic's renderer currently originates from id Tech 4.
 
-Long-term graphics work may include:
+Long-term graphics development may include:
 
 * Modern OpenGL support
 * Improved shader capabilities
@@ -131,33 +162,25 @@ Long-term graphics work may include:
 * Improved reflections
 * Better large-world rendering
 * Modern GPU resource management
+* Improved material systems
 
-Graphics work will be driven by actual engine requirements rather than attempting to reproduce every feature of modern commercial engines.
+Graphics development will be driven by the needs of Limnic rather than by an attempt to reproduce another engine feature-for-feature.
 
-## Editor
+## Asset Pipeline
 
-The Radiant editor is a major component of Limnic.
+Limnic is intended to support a broad range of useful asset formats where practical.
 
-Development priorities include:
+Asset compatibility may include formats originating from other engines and games.
 
-* Better viewport performance
-* Better camera controls
-* Improved stability
-* Improved selection and manipulation
-* Improved entity editing
-* Improved model placement
-* Better asset workflows
-* Better debugging and visualization
-* Support for larger scenes
-* More efficient world-building workflows
+The purpose of this compatibility is to make existing content usable within Limnic, not to force Limnic to reproduce the architecture or runtime behavior of the engine that originally created the content.
 
-The intention is to evolve the existing editor rather than immediately discard it and build a new editor from scratch.
+Where appropriate, external formats can be translated into Limnic-native representations.
 
 ## Navigation
 
 Navigation is planned to move toward a modern navigation system such as **Recast Navigation / Detour**.
 
-This will eventually provide better support for:
+This may provide improved support for:
 
 * Character navigation
 * NPC movement
@@ -174,41 +197,49 @@ Alternative physics technologies may be evaluated where they provide meaningful 
 * PhysX
 * Jolt Physics
 
-The existing implementation will remain useful while alternatives are investigated.
+The existing implementation remains useful while alternatives are investigated.
 
 ## Development Philosophy
 
 Limnic follows several principles:
 
-### 1. Don't rewrite what already works
+### 1. Build on what already works
 
-A working system is valuable.
+Existing technology represents valuable engineering work.
 
-### 2. Measure before optimizing
+### 2. Replace what doesn't
 
-Performance problems should be reproduced and profiled before architectural changes are made.
+Legacy systems are not preserved simply because they are old or familiar.
 
-### 3. Fix tooling before adding complexity
+### 3. Measure before optimizing
 
-A good development environment makes every later engine feature easier to build.
+Performance problems should be reproduced and investigated before architectural changes are made.
 
-### 4. Replace systems incrementally
+### 4. Fix tooling before adding unnecessary complexity
 
-Large engine rewrites are difficult to debug and difficult to learn from.
+A better development environment makes future engine development easier.
 
-### 5. Keep the engine understandable
+### 5. Replace systems incrementally
 
-Limnic is also a learning project. Engine code should remain understandable enough that individual systems can be studied, modified, and replaced.
+Large rewrites can make development difficult to debug and understand. Systems should be replaced when there is a clear reason to do so.
+
+### 6. Compatibility should not dictate architecture
+
+Supporting an external asset format should not require Limnic to reproduce the engine that created it.
+
+### 7. Keep the engine understandable
+
+Limnic is also an engine-development and learning project. Individual systems should remain understandable enough to study, modify, and replace.
 
 ## Status
 
-**Early development**
+**0.0.1 Pre-Alpha**
 
-Limnic Engine is currently being developed from the existing D3ModdingKit/dhewm3 foundation.
+Limnic Engine is in early development and is currently being developed from the D3ModdingKit/dhewm3/id Tech 4 foundation.
 
-The project is not yet intended to be a general-purpose commercial engine.
+The engine is not yet intended to be a finished general-purpose commercial engine.
 
-The immediate goal is to establish a reliable and efficient development environment and determine how far the id Tech 4 foundation can be modernized.
+Development is currently focused on improving the foundation, tooling, architecture, and workflows needed for future engine development.
 
 ## License
 
@@ -234,4 +265,4 @@ Their work provides the foundation upon which Limnic is being developed.
 
 **Limnic Engine**
 
-*A modern engine built by evolving a proven one.*
+*A new engine built from proven technology.*
